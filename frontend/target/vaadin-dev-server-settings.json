@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "C:/Users/HP/java_dis/p2-2024-2025-groupa_05/frontend/src/main/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/HP/java_dis/p2-2024-2025-groupa_05/frontend/src/main/frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/HP/java_dis/p2-2024-2025-groupa_05/frontend/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\HP\\java_dis\\p2-2024-2025-groupa_05\\frontend\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\HP\\java_dis\\p2-2024-2025-groupa_05\\frontend\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/HP/java_dis/p2-2024-2025-groupa_05/frontend/target/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/HP/java_dis/p2-2024-2025-groupa_05/frontend/target/dev-bundle/config",
+  "jarResourcesFolder": "C:/Users/HP/java_dis/p2-2024-2025-groupa_05/frontend/src/main/frontend/generated/jar-resources",
+  "themeName": "my-theme",
+  "clientServiceWorkerSource": "C:\\Users\\HP\\java_dis\\p2-2024-2025-groupa_05\\frontend\\target\\sw.ts",
+  "pwaEnabled": true,
+  "offlineEnabled": true,
+  "offlinePath": "'.'"
+}
