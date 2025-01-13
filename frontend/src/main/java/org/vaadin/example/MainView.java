@@ -1,37 +1,36 @@
 package org.vaadin.example;
 
-import com.google.gson.Gson;
+import java.lang.reflect.Type;
+import java.net.URI;
+import java.net.URLEncoder;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.vaadin.example.models.Turismo; // For LocalDate
+
+import com.google.gson.Gson; // For Button Variants (e.g., LUMO_ERROR)
+import com.google.gson.reflect.TypeToken; // For Form Layout
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.Route;
-import java.time.LocalDate; // For LocalDate
-import com.vaadin.flow.component.button.ButtonVariant; // For Button Variants (e.g., LUMO_ERROR)
-import com.vaadin.flow.component.formlayout.FormLayout; // For Form Layout
-import com.google.gson.reflect.TypeToken;
-import java.lang.reflect.Type;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
-import com.vaadin.flow.component.combobox.ComboBox;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-
-
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.vaadin.example.models.Turismo;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.router.Route;
 
 @Route("")
 public class MainView extends VerticalLayout {
@@ -154,7 +153,7 @@ public class MainView extends VerticalLayout {
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://backend-container:8083/api/turismo"))
+                .uri(URI.create("https://lab2-backend-085cd548673a.herokuapp.com/api/turismo"))
                 //.uri(URI.create("http://localhost:8083/api/turismo"))
                 .build();
     
@@ -239,7 +238,7 @@ public class MainView extends VerticalLayout {
             String jsonPayload = gson.toJson(turismo);
 
             HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://backend-container:8083/api/turismo"))
+                .uri(URI.create("https://lab2-backend-085cd548673a.herokuapp.com/api/turismo"))
                 //.uri(URI.create("http://localhost:8083/api/turismo"))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(jsonPayload))
@@ -260,7 +259,7 @@ public class MainView extends VerticalLayout {
             // Fetch the latest data for the selected record by its ID
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://backend-container:8083/api/turismo/" + turismo.get_id())) // Correct API call with ID
+                .uri(URI.create("https://lab2-backend-085cd548673a.herokuapp.com/api/turismo/" + turismo.get_id())) // Correct API call with ID
                 //.uri(URI.create("http://localhost:8083/api/turismo/" + turismo.get_id())) // Correct API call with ID
                 .build();
 
@@ -331,7 +330,7 @@ public class MainView extends VerticalLayout {
             String jsonPayload = gson.toJson(turismo);
 
             HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://backend-container:8083/api/turismo/" + turismo.get_id())) // API call for updating
+                .uri(URI.create("https://lab2-backend-085cd548673a.herokuapp.com/api/turismo/" + turismo.get_id())) // API call for updating
                 //.uri(URI.create("http://localhost:8083/api/turismo/" + turismo.get_id())) // API call for updating
                 .header("Content-Type", "application/json")
                 .PUT(HttpRequest.BodyPublishers.ofString(jsonPayload))
@@ -357,7 +356,7 @@ public class MainView extends VerticalLayout {
             HttpClient client = HttpClient.newHttpClient();
 
             HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://backend-container:8083/api/turismo/" + turismo.get_id()))
+                .uri(URI.create("https://lab2-backend-085cd548673a.herokuapp.com/api/turismo/" + turismo.get_id()))
                 //.uri(URI.create("http://localhost:8083/api/turismo/" + turismo.get_id()))
                 .DELETE()
                 .build();
@@ -384,7 +383,7 @@ public class MainView extends VerticalLayout {
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://backend-container:8083/api/turismo")) // Adjust the backend endpoint as needed
+                .uri(URI.create("https://lab2-backend-085cd548673a.herokuapp.com/api/turismo")) // Adjust the backend endpoint as needed
                 //.uri(URI.create("http://localhost:8083/api/turismo")) // Adjust the backend endpoint as needed
                 .build();
 
@@ -413,7 +412,7 @@ public class MainView extends VerticalLayout {
     
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://backend-container:8083/api/turismo/community/" + encodedCommunityCode))
+                .uri(URI.create("https://lab2-backend-085cd548673a.herokuapp.com/api/turismo/community/" + encodedCommunityCode))
                 //.uri(URI.create("http://localhost:8083/api/turismo/community/" + encodedCommunityCode))
                 .build();
     
