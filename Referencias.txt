@@ -1,0 +1,13 @@
+We have used several sources of information and knowledge to make the most complete and professional Lab we could:
+1. Class Repository: The official repository provided by the teaching team, which includes materials, examples, and resources related to the course and its assignments.
+The url is: https://github.com/oliver-seliom/DIS.git
+
+2. Practice 1: We have used some files such as Tourism.java and TouristController.java from the previous Lab.
+
+3. Dockerization Assignment: A previously completed activity as part of the course, focusing on creating Docker containers, configuring Dockerfiles, and enabling communication between applications through containers. 
+This assignment provided the foundation for dockerizing both the backend and frontend applications.
+
+4. Artificial Intelligence
+Unit tests: https://chatgpt.com/share/677bbec1-a090-800f-9f0b-13bf5df10c3b
+Frontend: Contains images, so we are not allowed to share it.
+CI/CD with Heroku:https://chatgpt.com/share/678467a6-d660-8012-bcdd-8efca38d83ac
